@@ -6,7 +6,7 @@
  * in the project's AndroidManifest.xml file.
  **/
 
-package com.example.android.justjava;
+package com.studio2bigdiv.android.justjava;
 
 
 
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        display(1);
+        display(2);
     }
 
     /**

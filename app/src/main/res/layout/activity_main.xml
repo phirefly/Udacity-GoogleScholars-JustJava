@@ -17,7 +17,7 @@
         />
 
 
-    <EditText
+    <TextView
         android:id="@+id/quantity_text_view"
         android:text="0"
         android:layout_width="wrap_content"
@@ -25,13 +25,15 @@
         android:textColor="@android:color/black"
         android:textSize="16sp"
         android:padding="16dp"
-        android:background="@android:color/darker_gray"></EditText>
+        android:background="@android:color/darker_gray"
+    />
 
     <Button
         android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Order"
+        android:onClick="submitOrder"
         />
 </LinearLayout>
 
