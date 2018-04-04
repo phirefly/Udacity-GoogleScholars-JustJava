@@ -11,6 +11,7 @@ package com.studio2bigdiv.android.justjava;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import java.text.NumberFormat;
 
@@ -31,9 +32,13 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        CheckBox checkBox = (CheckBox) findViewById(R.id.has_whipped_cream);
+        boolean hasWhippedCream = checkBox.isChecked();
+
         int price = calculatePrice(quantity, 5);
+        String whippedCreamMessage = "Whipped Cream: " + hasWhippedCream;
         String priceMessage = "Total: $" + price;
-        priceMessage = priceMessage + "\nThank you very much!"; //Shows updating an existing variable
+        priceMessage = whippedCreamMessage + "\n" + priceMessage + "\nThank you very much!"; //Shows updating an existing variable
         displayMessage(priceMessage);
     }
 
