@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import java.text.NumberFormat;
 
@@ -41,7 +42,10 @@ public class MainActivity extends AppCompatActivity {
         String whippedCreamMessage = "Whipped Cream: " + hasWhippedCream;
         String chocolateMessage = "Chocolate: " + hasChocolate;
         String priceMessage = "Total: $" + price;
-        priceMessage = whippedCreamMessage + "\n"
+        EditText userNameInput = (EditText) findViewById(R.id.user_name);
+        String nameMessage = "Name: " + userNameInput.getText();
+        priceMessage = nameMessage + "\n"
+                       + whippedCreamMessage + "\n"
                        + chocolateMessage + "\n"
                        + priceMessage + "\n"
                        + "Thank you very much!";
