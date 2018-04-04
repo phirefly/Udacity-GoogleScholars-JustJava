@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         String priceMessage = "Total: $" + price;
         EditText userNameInput = (EditText) findViewById(R.id.user_name);
         String nameMessage = "Name: " + userNameInput.getText();
+
+        //TODO: extract method > createOrderSummary method
         priceMessage = nameMessage + "\n"
                        + whippedCreamMessage + "\n"
                        + chocolateMessage + "\n"
