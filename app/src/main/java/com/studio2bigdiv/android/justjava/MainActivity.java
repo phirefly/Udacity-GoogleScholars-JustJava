@@ -37,8 +37,9 @@ public class MainActivity extends AppCompatActivity {
         CheckBox checkBoxChocolate = (CheckBox) findViewById(R.id.has_chocolate);
         boolean hasWhippedCream = checkBoxWhippedCream.isChecked();
         boolean hasChocolate = checkBoxChocolate.isChecked();
+        int baseCoffeePrice = 5;
 
-        int price = calculatePrice(quantity, 5);
+        int price = calculatePrice(quantity, baseCoffeePrice, hasWhippedCream, hasChocolate);
         String whippedCreamMessage = "Whipped Cream: " + hasWhippedCream;
         String chocolateMessage = "Chocolate: " + hasChocolate;
         String priceMessage = "Total: $" + price;
@@ -59,8 +60,16 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param quantity is the number of cups of coffee ordered
      */
-    private int calculatePrice(int quantity, int price) {
-        return quantity * price;
+    private int calculatePrice(int quantity, int price, boolean addWhippedCream, boolean addChocolate) {
+        int subtotalPrice = price;
+        if (addChocolate) {
+            subtotalPrice += 2;
+        }
+        if (addWhippedCream) {
+            subtotalPrice += 1;
+        }
+
+        return quantity * subtotalPrice;
     }
 
     /**
